@@ -1,0 +1,108 @@
+{
+  "name": "@xorgy/joto",
+  "version": "0.0.1",
+  "description": "JavaScript/TypeScript utilities for working with Joto base units (iota/whit/smidge): constants, parsing, formatting.",
+  "license": "(ISC OR MIT OR Apache-2.0)",
+  "author": "Aaron Muir Hamilton <aaron@correspondwith.me> (https://qui.suis.je/)",
+  "keywords": [
+    "joto",
+    "units",
+    "unit-conversion",
+    "measurement",
+    "quantities",
+    "dimensions",
+    "length",
+    "mass",
+    "temperature",
+    "parsing",
+    "formatting",
+    "typesetting"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xorgy/joto-js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./constants": {
+      "types": "./types/constants/index.d.ts",
+      "default": "./src/constants/index.js"
+    },
+    "./constants/length": {
+      "types": "./types/constants/length.d.ts",
+      "default": "./src/constants/length.js"
+    },
+    "./constants/mass": {
+      "types": "./types/constants/mass.d.ts",
+      "default": "./src/constants/mass.js"
+    },
+    "./constants/temperature": {
+      "types": "./types/constants/temperature.d.ts",
+      "default": "./src/constants/temperature.js"
+    },
+    "./parse": {
+      "types": "./types/parse/index.d.ts",
+      "default": "./src/parse/index.js"
+    },
+    "./parse/length": {
+      "types": "./types/parse/length.d.ts",
+      "default": "./src/parse/length.js"
+    },
+    "./parse/mass": {
+      "types": "./types/parse/mass.d.ts",
+      "default": "./src/parse/mass.js"
+    },
+    "./parse/temperature": {
+      "types": "./types/parse/temperature.d.ts",
+      "default": "./src/parse/temperature.js"
+    },
+    "./format": {
+      "types": "./types/format/index.d.ts",
+      "default": "./src/format/index.js"
+    },
+    "./format/length": {
+      "types": "./types/format/length.d.ts",
+      "default": "./src/format/length.js"
+    },
+    "./format/mass": {
+      "types": "./types/format/mass.d.ts",
+      "default": "./src/format/mass.js"
+    },
+    "./format/temperature": {
+      "types": "./types/format/temperature.d.ts",
+      "default": "./src/format/temperature.js"
+    }
+  },
+  "files": [
+    "src",
+    "types",
+    "README.md",
+    "LICENSE-ISC",
+    "LICENSE-MIT",
+    "LICENSE-APACHE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "bench": "node --expose-gc bench/run.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepack": "node -e \"require('fs').rmSync('types', { recursive: true, force: true })\" && tsc -p tsconfig.types.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@mitata/counters": "^0.0.8",
+    "eslint": "^9.39.2",
+    "mitata": "^1.0.34",
+    "typescript": "^5.9.3"
+  }
+}

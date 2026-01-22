@@ -1,0 +1,7 @@
+node_modules/
+docs/
+isolate-*-v8.log
+*.cpuprofile
+*.d.ts
+*.d.ts.map
+types/
